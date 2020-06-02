@@ -1,6 +1,6 @@
 {
   "name": "system-idle-time",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Returns system idle time in milliseconds",
   "main": "addon.js",
   "scripts": {
@@ -22,7 +22,6 @@
   "homepage": "https://bitbucket.org/rbergman/system-idle-time#readme",
   "dependencies": {
     "bindings": "^1.5.0",
-    "nan": "^2.14.1",
-    "node-gyp": "^3.8.0"
+    "nan": "^2.14.1"
   }
 }
