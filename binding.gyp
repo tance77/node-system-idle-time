@@ -16,18 +16,9 @@
           "src/mac/idle.cc"
         ],
         "xcode_settings": {
-          'CLANG_CXX_LANGUAGE_STANDARD': 'c++11',
-          'CLANG_CXX_LIBRARY': 'libc++',
-          'GCC_ENABLE_CPP_EXCEPTIONS': 'NO',
-          'MACOSX_DEPLOYMENT_TARGET': '10.7',
           "OTHER_CPLUSPLUSFLAGS": ["-std=c++11", "-stdlib=libc++"],
-        "OTHER_LDFLAGS": ["-framework CoreFoundation -framework IOKit"]
+          "OTHER_LDFLAGS": ["-framework CoreFoundation -framework IOKit"]
         }
-      }],
-        ['OS!="win"', {
-            'cflags_cc+': [
-              '-std=c++0x'
-        ]
       }],
       ['OS=="win"', {
         "defines": [
@@ -36,14 +27,12 @@
         "sources": [
           "src/win/idle.cc"
         ],
-         'msvs_settings': {
-            'VCCLCompilerTool': {
-              'AdditionalOptions': [
-                # disable Thread-Safe "Magic" for local static variables
-                '/Zc:threadSafeInit-',
-              ],
-            },
+        "msvs_settings": {
+          "VCLinkerTool": {
+            # Don't print a linker warning when no imports from either .exe are used.
+            "AdditionalOptions": ["/ignore:4199"],
           },
+        }
      }],
      ['OS=="linux"', {
        "defines": [
